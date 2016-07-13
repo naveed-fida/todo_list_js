@@ -1,0 +1,343 @@
+@import url("whitespace-reset.css");
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font: normal 16px Helvetica, Arial, sans-serif;
+  position: relative;
+}
+
+
+nav {
+  color: #fff;
+  padding: 70px 0 100px 0;
+  min-height: 100vh;
+  float: left;
+  background: #464f77;
+  box-sizing: border-box;
+  width: 335px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2, h3 {
+  font-weight: normal;
+}
+
+nav h2 {
+  padding: 12px 0 10px 138px;
+  box-sizing: border-box;
+  height: 46px;
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+}
+
+nav h2 span {
+  font-size: 16px;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  margin: -9px 0 0 0;
+  padding: 2px 7px;
+  background: rgba(256, 256, 256, 0.3);
+}
+
+nav h2.todo {
+  background: transparent url('../images/list_icon.png') 100px 8px no-repeat;
+}
+
+
+nav h2.completed {
+  background: transparent url('../images/completed.png') 100px 8px no-repeat;
+}
+
+nav h2.current {
+  background-color: #383f5f;
+}
+
+nav h2.current span {
+  background: #148fd5;
+}
+
+nav ul {
+  padding: 0 0 66px 0;
+  color: #b2b5c3;
+}
+
+nav ul:nth-of-type(2) li {
+  text-decoration: line-through;
+}
+
+nav ul li {
+  height: 45px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+nav a {
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 14px 30px 14px 135px;
+  color: inherit;
+}
+
+
+nav a:hover, a.current {
+  background: #383f5f;
+  color: #fff;
+}
+
+nav a:hover span, a.current span {
+  background-color: #148fd5;
+  color: #fff;
+}
+nav a:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+nav a span {
+  float: right;
+  padding: 2px 6px;
+  border-radius: 100%;
+  font-size: 14px;
+  background: rgba(256, 256, 256, 0.3);
+}
+
+main {
+  overflow: hidden;
+  padding: 23px 80px 0 20px;
+  position: relative;
+}
+
+
+#menu_toggle {
+  display: none;
+}
+
+.hamburger {
+  display: block;
+  width: 23px;
+  height: 18px;
+  margin-bottom: 33px;
+  cursor: pointer;
+  background: url('../images/menu_icon.png') 0 0 no-repeat;
+  visibility: hidden;
+}
+
+main h2 {
+  font-size: 21px;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+main h2 span {
+  color: #fff;
+  font-size: 18px;
+  display: inline-block;
+  padding: 2px 7px;
+  margin-left: 20px;
+  background: #148fd5;
+  border-radius: 100%;
+}
+
+
+main > p {
+  padding-left: 26px;
+  background: transparent url('../images/plus.png') left center no-repeat;
+  margin-bottom: 16px;
+}
+
+main p a {
+  color: #148fd5;
+}
+
+main ul button, main ul h3 {
+  display: inline-block;
+}
+
+main ul li {
+  font-family: 'Myriad Pro';
+  padding: 18px 0 18px 12px;
+  border-top: 1px solid #e7e7e7;
+}
+
+main ul li:after {
+  content: "";
+  display: inline-block;
+  clear: both;
+}
+
+main li span {
+  margin-left: 50px;
+}
+
+main li a {
+  color: inherit;
+}
+
+main a:hover {
+  color: #148fd5;
+}
+
+button {
+  background: transparent;
+}
+
+button.check {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #9c9c9c;
+  margin-right: 10px;
+}
+
+button.check:hover {
+  border-color: #148fd5;
+}
+
+button.destroy {
+  border: none;
+  width: 18px;
+  height: 20px;
+  float: right;
+  background: url('../images/trash.png') 0 0 no-repeat;
+}
+
+li.completed {
+  color: #aaa;
+}
+
+li.completed h3 {
+  text-decoration: line-through;
+}
+
+li.completed .check {
+  background: url('../images/check.png');
+  border: none;
+}
+
+@media(max-width: 768px) {
+  nav {
+    display: none;
+  }
+  .hamburger {
+    visibility: visible;
+  }
+
+  #menu_toggle:checked + nav {
+    display: block;
+  }
+}
+
+/*--------------------------- Styles for form -------------------------------*/
+
+#new {
+  margin-bottom: 20px;
+  display: none;
+}
+
+#new input {
+  padding: 8px;
+  margin: 0 5px 0 5px;
+  width: 300px;
+}
+
+#new button, #edit button {
+  border: none;
+  background: #148fd5;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+#new button.cancel {
+  background: #ee6e33;
+}
+
+button {
+  cursor: pointer;
+}
+
+#edit {
+    font-size: 16px;
+    width: 575px;
+    height: 450px;
+    padding: 38px 38px 38px 32px;
+    background: #fff;
+    box-sizing: border-box;
+    position: absolute;
+    top: 105px;
+    right: 185px;
+}
+
+#message {
+  position: absolute;
+  bottom: 20px;
+  color: #ee6e33;
+}
+
+.title, .date, .description {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+
+input, textarea {
+border: 1px solid #b3b3b3;
+}
+
+label[for="date"] {
+  margin-right: 30px;
+}
+
+input[type="number"] {
+  width: 100px;
+  margin: 0 10px 0 10px;
+}
+
+#edit input[type="text"], #edit textarea {
+  width: 395px;
+  position: absolute;
+  right: 0;
+}
+
+#edit input, #edit textarea {
+  box-sizing: border-box;
+  padding: 10px 5px;
+}
+
+
+#edit textarea {
+  height: 145px;
+}
+
+#edit button {
+  margin-top: 120px;
+  width: 184px;
+}
+    
+#edit button:nth-of-type(1) {
+  margin-right: 18px;
+}
+
+.buttons {
+  margin-left: 110px;
+}
+
+
+#overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .3);
+  display: none;
+}
